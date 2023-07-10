@@ -1,45 +1,37 @@
-const ArrayDeProductos = [];
+import { Producto, agregarAlCarrito } from "./clases.js";
+
+const arrayDeProductos = [];
 let ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 let idUniversal = 1;
 
-// CLASE CONSTRUCTORA  
-class Producto {
-    constructor(nombre, precio, categoria, id, url) {
-        this.nombre = nombre;
-        this.precio = precio;
-        this.categoria = categoria;
-        this.id = id;
-        this.url = url;
-    }
-}
 
 // PRODUCTOS
 const celular1 = new Producto("Samsung Galaxy S23", 1000, "celulares", idUniversal++, "./IMG/celular1.jpg");
-ArrayDeProductos.push(celular1);
+arrayDeProductos.push(celular1);
 
 const celular2 = new Producto("Iphone 13", 1000, "celulares", idUniversal++, "./IMG/celular2.jpg");
-ArrayDeProductos.push(celular2);
+arrayDeProductos.push(celular2);
 
 const auricular1 = new Producto("Auriculares Hyperx Cloud 2", 1000, "perifericos", idUniversal++, "./IMG/auricular1.jpg");
-ArrayDeProductos.push(auricular1);
+arrayDeProductos.push(auricular1);
 
 const auricular2 = new Producto("Auriculares Logitech G Pro", 1000, "perifericos", idUniversal++, "./IMG/auricular2.jpg");
-ArrayDeProductos.push(auricular2);
+arrayDeProductos.push(auricular2);
 
 const consola1 = new Producto("Playstation 5", 1000, "consolas", idUniversal++, "./IMG/consola1.jpg");
-ArrayDeProductos.push(consola1);
+arrayDeProductos.push(consola1);
 
 const consola2 = new Producto("Xbox Series X", 1000, "consolas", idUniversal++, "./IMG/consola2.jpg");
-ArrayDeProductos.push(consola2);
+arrayDeProductos.push(consola2);
 
 const monitor1 = new Producto("Monitor ASUS Gaming VG279Q 27″ 144hz", 1000, "monitores", idUniversal++, "./IMG/monitor1.jpg");
-ArrayDeProductos.push(monitor1);
+arrayDeProductos.push(monitor1);
 
 const monitor2 = new Producto("Monitor Samsung UE570 28″ UHD 4K", 1000, "monitores", idUniversal++, "./IMG/monitor2.jpg");
-ArrayDeProductos.push(monitor2);
+arrayDeProductos.push(monitor2);
 
 const notebook1 = new Producto("Notebook ASUS GL702VI Gaming", 1000, "notebooks", idUniversal++, "./IMG/notebook1.jpg");
-ArrayDeProductos.push(notebook1);
+arrayDeProductos.push(notebook1);
 let productoEncontrado = {};
 
 const app = document.querySelector("#app");
@@ -48,7 +40,7 @@ const input = document.querySelector("#search");
 
 input.addEventListener("input", (event) => {
     console.log(event.target.value)
-    productoEncontrado = ArrayDeProductos.find(el => el.nombre === event.target.value)
+    productoEncontrado = arrayDeProductos.find(el => el.nombre === event.target.value)
 
 })
 
@@ -74,7 +66,7 @@ buttonHeader.addEventListener("click", () => {
 
 })
 
-ArrayDeProductos.forEach((el) => {
+arrayDeProductos.forEach((el) => {
     const tarjeta = document.createElement("div");
     tarjeta.classList.add("tarjeta");
     tarjeta.innerHTML = ` 
@@ -87,7 +79,7 @@ ArrayDeProductos.forEach((el) => {
     const buttonAgregar = document.createElement("button");
     buttonAgregar.innerText = "Agregar";
     buttonAgregar.addEventListener("click", () => {
-        ArrayCarrito.push(el);
+        agregarAlCarrito(ArrayCarrito,el);
         localStorage.setItem("carrito", JSON.stringify(ArrayCarrito))
     })
 
