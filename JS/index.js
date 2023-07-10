@@ -88,7 +88,7 @@ ArrayDeProductos.forEach((el)=>{
 })
 
 const finalizarCompra = () =>{
-    // PRECESODE PAGO
+    // PRECESO SDE PAGO
     //
     //
     ArrayCarrito = []
