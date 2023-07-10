@@ -2,6 +2,7 @@ html,body {
     margin: 0;
     padding: 0;
     height: 100%;
+    background-color: #f7ece2;
 }
 
 body {
@@ -11,11 +12,27 @@ body {
     justify-items: center;
 }
 
+header {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #f7ece2;
+}
+
+#header_button {
+    border: 1px solid #808080 !important;
+    background-color: transparent;
+    color: black
+}
+
+#titulo {
+    text-align: center;
+}
+
 button {
     padding: 12px;
-    background: #b89c8d;
+    background: #808080;
     border: none;
-    color: #000000;
+    color: #ffffff;
     border-radius: 10px;
     align-self: center;
     cursor: pointer;
@@ -37,14 +54,9 @@ img:hover {
 }
 
 
-header {
-    width: 100%;
-    padding: 10px 12px;
-    background-color: #faebd7;
-}
 
 #app {
-    background-color: #8a8580;
+    background-color: #808080;
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -52,12 +64,6 @@ header {
     gap: 24px;
     justify-items: center;
     padding: 20px;
-}
-
-#header_button {
-    border: 1px solid #808080 !important;
-    background-color: transparent;
-    color: black
 }
 
 .tarjeta_image {
@@ -76,9 +82,4 @@ header {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-}
-
-#titulo {
-    text-align: center;
-    
 }
