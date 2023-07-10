@@ -55,8 +55,6 @@ header {
 }
 
 #header_button {
-    width: 100px;
-    height: 80px;
     border: 1px solid #808080 !important;
     background-color: transparent;
     color: black
