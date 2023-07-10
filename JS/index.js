@@ -1,19 +1,16 @@
 const ArrayDeProductos = [];
 let ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
-if(ArrayCarrito === null) {
-        ArrayCarrito = []
-}
 let idUniversal = 1;
 
 // CLASE CONSTRUCTORA  
 class Producto {
-        constructor(nombre, precio, categoria, id, url) {
-                this.nombre = nombre;
-                this.precio = precio;
-                this.categoria = categoria;
-                this.id = id;
-                this.url = url;
-        }
+    constructor(nombre, precio, categoria, id, url) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.categoria = categoria;
+        this.id = id;
+        this.url = url;
+    }
 }
 
 // PRODUCTOS
@@ -43,12 +40,23 @@ ArrayDeProductos.push(monitor2);
 
 const notebook1 = new Producto("Notebook ASUS GL702VI Gaming", 1000, "notebooks", idUniversal++, "./IMG/notebook1.jpg");
 ArrayDeProductos.push(notebook1);
-
+let productoEncontrado = {};
 
 const app = document.querySelector("#app");
 const buttonHeader = document.querySelector("#header_button");
+const input = document.querySelector("#search");
 
-buttonHeader.addEventListener("click", ()=>{
+input.addEventListener("input", (event) => {
+    console.log(event.target.value)
+    productoEncontrado = ArrayDeProductos.find(el => el.nombre === event.target.value)
+
+})
+
+input.addEventListener("keypress", (event) => {
+    (event.key === "Enter" && productoEncontrado) && console.log("El producto es:", productoEncontrado)
+})
+
+buttonHeader.addEventListener("click", () => {
     app.innerHTML = ''
     ArrayCarrito.forEach(el => {
         const tarjeta = document.createElement("div");
@@ -60,13 +68,13 @@ buttonHeader.addEventListener("click", ()=>{
                             <span class="tarjeta_precio">$${el.precio}</span>
                         </div>
         `
-        
+
         app.appendChild(tarjeta);
-})
+    })
 
 })
 
-ArrayDeProductos.forEach((el)=>{
+ArrayDeProductos.forEach((el) => {
     const tarjeta = document.createElement("div");
     tarjeta.classList.add("tarjeta");
     tarjeta.innerHTML = ` 
@@ -78,19 +86,17 @@ ArrayDeProductos.forEach((el)=>{
     `
     const buttonAgregar = document.createElement("button");
     buttonAgregar.innerText = "Agregar";
-    buttonAgregar.addEventListener("click",()=>{
+    buttonAgregar.addEventListener("click", () => {
         ArrayCarrito.push(el);
-        localStorage.setItem("carrito",JSON.stringify(ArrayCarrito))
+        localStorage.setItem("carrito", JSON.stringify(ArrayCarrito))
     })
 
     tarjeta.appendChild(buttonAgregar);
     app.appendChild(tarjeta);
 })
 
-const finalizarCompra = () =>{
-    // PRECESO DE PAGO
-    //
-    //
+const finalizarCompra = () => {
+
     ArrayCarrito = []
     localStorage.remove("carrito")
 
