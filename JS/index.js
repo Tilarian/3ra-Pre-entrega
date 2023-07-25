@@ -6,31 +6,31 @@ let idUniversal = 1;
 
 
 // PRODUCTOS
-const celular1 = new Producto("Samsung Galaxy S23", 1000, "celulares", idUniversal++, "./IMG/celular1.jpg");
+const celular1 = new Producto("Samsung Galaxy S23", 1299, "celulares", idUniversal++, "./IMG/celular1.jpg");
 arrayDeProductos.push(celular1);
 
-const celular2 = new Producto("Iphone 13", 1000, "celulares", idUniversal++, "./IMG/celular2.jpg");
+const celular2 = new Producto("Iphone 13", 1799, "celulares", idUniversal++, "./IMG/celular2.jpg");
 arrayDeProductos.push(celular2);
 
-const auricular1 = new Producto("Auriculares Hyperx Cloud 2", 1000, "perifericos", idUniversal++, "./IMG/auricular1.jpg");
+const auricular1 = new Producto("Auriculares Hyperx Cloud 2", 69, "perifericos", idUniversal++, "./IMG/auricular1.jpg");
 arrayDeProductos.push(auricular1);
 
-const auricular2 = new Producto("Auriculares Logitech G Pro", 1000, "perifericos", idUniversal++, "./IMG/auricular2.jpg");
+const auricular2 = new Producto("Auriculares Logitech G Pro", 119, "perifericos", idUniversal++, "./IMG/auricular2.jpg");
 arrayDeProductos.push(auricular2);
 
-const consola1 = new Producto("Playstation 5", 1000, "consolas", idUniversal++, "./IMG/consola1.jpg");
+const consola1 = new Producto("Playstation 5", 2599, "consolas", idUniversal++, "./IMG/consola1.jpg");
 arrayDeProductos.push(consola1);
 
-const consola2 = new Producto("Xbox Series X", 1000, "consolas", idUniversal++, "./IMG/consola2.jpg");
+const consola2 = new Producto("Xbox Series X", 2399, "consolas", idUniversal++, "./IMG/consola2.jpg");
 arrayDeProductos.push(consola2);
 
-const monitor1 = new Producto("Monitor ASUS Gaming VG279Q 27″ 144hz", 1000, "monitores", idUniversal++, "./IMG/monitor1.jpg");
+const monitor1 = new Producto("Monitor ASUS Gaming VG279Q 27″ 144hz", 699, "monitores", idUniversal++, "./IMG/monitor1.jpg");
 arrayDeProductos.push(monitor1);
 
-const monitor2 = new Producto("Monitor Samsung UE570 28″ UHD 4K", 1000, "monitores", idUniversal++, "./IMG/monitor2.jpg");
+const monitor2 = new Producto("Monitor Samsung UE570 28″ UHD 4K", 989, "monitores", idUniversal++, "./IMG/monitor2.jpg");
 arrayDeProductos.push(monitor2);
 
-const notebook1 = new Producto("Notebook ASUS GL702VI Gaming", 1000, "notebooks", idUniversal++, "./IMG/notebook1.jpg");
+const notebook1 = new Producto("Notebook ASUS GL702VI Gaming", 3599, "notebooks", idUniversal++, "./IMG/notebook1.jpg");
 arrayDeProductos.push(notebook1);
 let productoEncontrado = {};
 
@@ -48,7 +48,7 @@ input.addEventListener("keypress", (event) => {
     (event.key === "Enter" && productoEncontrado) && console.log("El producto es:", productoEncontrado)
 })
 
-// Botón del carrito -- Toastify -- Contador de productos y precio final
+// BOTON CARRITO // CONTADOR Y PRECIO FINAL
 carritoButton.addEventListener("click", () => {
     app.innerHTML = '';
     ArrayCarrito.forEach(el => {
@@ -64,10 +64,10 @@ carritoButton.addEventListener("click", () => {
 
         app.appendChild(tarjeta);
 
-    }) 
+    })
 
-    let total = ArrayCarrito.reduce((contadorProductos,el)=> contadorProductos + el.precio,0)
-    
+    let total = ArrayCarrito.reduce((contadorProductos, el) => contadorProductos + el.precio, 0)
+
     Toastify({
         text: `Tienes ${ArrayCarrito.length} productos en tu carrito con un total de $${total}.`,
         duration: 3000,
@@ -76,10 +76,18 @@ carritoButton.addEventListener("click", () => {
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
-          background: "linear-gradient(to right, #00b09b, #96c93d)",
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
         },
-        // onClick: function(){} // Callback after click
-      }).showToast();
+        onClick: ()=> {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Gracias por tu compra!',
+                showConfirmButton: false,
+                timer: 3000
+            })
+        } // Callback after click
+    }).showToast();
 })
 
 arrayDeProductos.forEach((el) => {
@@ -96,11 +104,11 @@ arrayDeProductos.forEach((el) => {
 
 
 
-    // Agregar al carrito -- Sweetalert
+    // BOTON AGREGAR AL CARRITO // SWEETALERT
     const buttonAgregar = document.createElement("button");
     buttonAgregar.innerText = "Agregar";
     buttonAgregar.addEventListener("click", () => {
-        agregarAlCarrito(ArrayCarrito,el);
+        agregarAlCarrito(ArrayCarrito, el);
         localStorage.setItem("carrito", JSON.stringify(ArrayCarrito));
         Swal.fire({
             position: 'center',
@@ -108,7 +116,7 @@ arrayDeProductos.forEach((el) => {
             title: 'Se agregó correctamente al carrito el producto' + el.nombre,
             showConfirmButton: false,
             timer: 1500
-          })
+        })
     })
 
 
