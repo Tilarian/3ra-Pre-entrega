@@ -76,12 +76,28 @@ arrayDeProductos.forEach((el) => {
                         <span class="tarjeta_precio">$${el.precio}</span>
                     </div>
     `
+
+
+
+
+    // Agregar al carrito - Sweetalert
     const buttonAgregar = document.createElement("button");
     buttonAgregar.innerText = "Agregar";
     buttonAgregar.addEventListener("click", () => {
         agregarAlCarrito(ArrayCarrito,el);
-        localStorage.setItem("carrito", JSON.stringify(ArrayCarrito))
+        localStorage.setItem("carrito", JSON.stringify(ArrayCarrito));
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Se agregó correctamente al carrito el producto' + el.nombre,
+            showConfirmButton: false,
+            timer: 1500
+          })
     })
+
+
+
+
 
     tarjeta.appendChild(buttonAgregar);
     app.appendChild(tarjeta);
@@ -93,3 +109,4 @@ const finalizarCompra = () => {
     localStorage.remove("carrito")
 
 }
+
