@@ -35,7 +35,7 @@ arrayDeProductos.push(notebook1);
 let productoEncontrado = {};
 
 const app = document.querySelector("#app");
-const buttonHeader = document.querySelector("#header_button");
+const carritoButton = document.querySelector("#carrito_button");
 const input = document.querySelector("#search");
 
 input.addEventListener("input", (event) => {
@@ -48,8 +48,9 @@ input.addEventListener("keypress", (event) => {
     (event.key === "Enter" && productoEncontrado) && console.log("El producto es:", productoEncontrado)
 })
 
-buttonHeader.addEventListener("click", () => {
-    app.innerHTML = ''
+// Botón del carrito -- Toastify -- Contador de productos y precio final
+carritoButton.addEventListener("click", () => {
+    app.innerHTML = '';
     ArrayCarrito.forEach(el => {
         const tarjeta = document.createElement("div");
         tarjeta.classList.add("tarjeta");
@@ -62,8 +63,23 @@ buttonHeader.addEventListener("click", () => {
         `
 
         app.appendChild(tarjeta);
-    })
 
+    }) 
+
+    let total = ArrayCarrito.reduce((contadorProductos,el)=> contadorProductos + el.precio,0)
+    
+    Toastify({
+        text: `Tienes ${ArrayCarrito.length} productos en tu carrito con un total de $${total}.`,
+        duration: 3000,
+        close: false,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        // onClick: function(){} // Callback after click
+      }).showToast();
 })
 
 arrayDeProductos.forEach((el) => {
@@ -80,7 +96,7 @@ arrayDeProductos.forEach((el) => {
 
 
 
-    // Agregar al carrito - Sweetalert
+    // Agregar al carrito -- Sweetalert
     const buttonAgregar = document.createElement("button");
     buttonAgregar.innerText = "Agregar";
     buttonAgregar.addEventListener("click", () => {
