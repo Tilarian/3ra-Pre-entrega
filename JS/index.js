@@ -1,5 +1,6 @@
 import { Producto, agregarAlCarrito } from "./clases.js";
 
+
 const arrayDeProductos = [];
 let ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 let idUniversal = 1;
@@ -78,7 +79,7 @@ carritoButton.addEventListener("click", () => {
         style: {
             background: "linear-gradient(to right, #00b09b, #96c93d)",
         },
-        onClick: ()=> {
+        onClick: () => {
             Swal.fire({
                 position: 'center',
                 icon: 'success',
@@ -113,9 +114,9 @@ arrayDeProductos.forEach((el) => {
         Swal.fire({
             position: 'center',
             icon: 'success',
-            title: 'Se agregó correctamente al carrito el producto' + el.nombre,
+            title: 'El producto se agregó correctamente',
             showConfirmButton: false,
-            timer: 1500
+            timer: 2500
         })
     })
 
@@ -133,5 +134,3 @@ const finalizarCompra = () => {
     localStorage.remove("carrito")
 
 }
-
-
