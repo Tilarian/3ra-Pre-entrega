@@ -13,3 +13,5 @@ export class Producto {
 export const agregarAlCarrito = (carrito, producto) => {
     carrito.push(producto)
 }
+
+export default agregarAlCarrito;
