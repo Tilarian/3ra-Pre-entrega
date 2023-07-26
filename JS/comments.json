@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "text": "Este es un comentario genial",
+      "author": "John Doe",
+      "date": "2023-03-08T12:00:00Z"
+    },
+    {
+      "id": 2,
+      "text": "Este es otro comentario genial",
+      "author": "Jane Doe",
+      "date": "2023-03-09T12:00:00Z"
+    },
+    {
+      "id": 3,
+      "text": "Este es un comentario aún más genial",
+      "author": "Peter Smith",
+      "date": "2023-03-10T12:00:00Z"
+    }
+  ]
