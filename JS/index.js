@@ -6,33 +6,112 @@ let ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 let idUniversal = 1;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 // PRODUCTOS
-const celular1 = new Producto("Samsung Galaxy S23", 1299, "celulares", idUniversal++, "./IMG/celular1.jpg");
+const celular1 = new Producto({
+    nombre: "Samsung Galaxy S23",
+    precio: 1299,
+    categoria: "celulares",
+    id: idUniversal++,
+    url: "./IMG/celular1.jpg"
+});
 arrayDeProductos.push(celular1);
 
-const celular2 = new Producto("Iphone 13", 1799, "celulares", idUniversal++, "./IMG/celular2.jpg");
+const celular2 = new Producto({
+    nombre: "Iphone 13",
+    precio: 1799,
+    categoria: "celulares",
+    id: idUniversal++,
+    url: "./IMG/celular2.jpg"
+});
 arrayDeProductos.push(celular2);
 
-const auricular1 = new Producto("Auriculares Hyperx Cloud 2", 69, "perifericos", idUniversal++, "./IMG/auricular1.jpg");
+const auricular1 = new Producto({
+    nombre: "Auriculares Hyperx Cloud 2",
+    precio: 69,
+    categoria: "perifericos",
+    id: idUniversal++,
+    url: "./IMG/auricular1.jpg"
+});
 arrayDeProductos.push(auricular1);
 
-const auricular2 = new Producto("Auriculares Logitech G Pro", 119, "perifericos", idUniversal++, "./IMG/auricular2.jpg");
+const auricular2 = new Producto({
+    nombre: "Auriculares Logitech G Pro",
+    precio: 119,
+    categoria: "perifericos",
+    id: idUniversal++,
+    url: "./IMG/auricular2.jpg"
+});
 arrayDeProductos.push(auricular2);
 
-const consola1 = new Producto("Playstation 5", 2599, "consolas", idUniversal++, "./IMG/consola1.jpg");
+const consola1 = new Producto({
+    nombre: "Playstation 5",
+    precio: 2599,
+    categoria: "consolas",
+    id: idUniversal++,
+    url: "./IMG/consola1.jpg"
+});
 arrayDeProductos.push(consola1);
 
-const consola2 = new Producto("Xbox Series X", 2399, "consolas", idUniversal++, "./IMG/consola2.jpg");
+const consola2 = new Producto({
+    nombre: "Xbox Series X",
+    precio: 2399,
+    categoria: "consolas",
+    id: idUniversal++,
+    url: "./IMG/consola2.jpg"
+});
 arrayDeProductos.push(consola2);
 
-const monitor1 = new Producto("Monitor ASUS Gaming VG279Q 27″ 144hz", 699, "monitores", idUniversal++, "./IMG/monitor1.jpg");
+const monitor1 = new Producto({
+    nombre: "Monitor ASUS Gaming VG279Q 27″ 144hz",
+    precio: 699,
+    categoria: "monitores",
+    id: idUniversal++,
+    url: "./IMG/monitor1.jpg"
+});
 arrayDeProductos.push(monitor1);
 
-const monitor2 = new Producto("Monitor Samsung UE570 28″ UHD 4K", 989, "monitores", idUniversal++, "./IMG/monitor2.jpg");
+const monitor2 = new Producto({
+    nombre: "Monitor Samsung UE570 28″ UHD 4K",
+    precio: 989,
+    categoria: "monitores",
+    id: idUniversal++,
+    url: "./IMG/monitor2.jpg"
+});
 arrayDeProductos.push(monitor2);
 
-const notebook1 = new Producto("Notebook ASUS GL702VI Gaming", 3599, "notebooks", idUniversal++, "./IMG/notebook1.jpg");
+const notebook1 = new Producto({
+    nombre: "Notebook ASUS GL702VI Gaming",
+    precio: 3599,
+    categoria: "notebooks",
+    id: idUniversal++,
+    url: "./IMG/notebook1.jpg"
+});
 arrayDeProductos.push(notebook1);
+
+
+
+
+
+
+
+
+
+
+
+
+
 let productoEncontrado = {};
 
 const app = document.querySelector("#app");
@@ -91,6 +170,9 @@ carritoButton.addEventListener("click", () => {
     }).showToast();
 })
 
+
+
+// RECORRO EL ARRAY Y PRINTEO EN "APP"
 arrayDeProductos.forEach((el) => {
     const tarjeta = document.createElement("div");
     tarjeta.classList.add("tarjeta");
@@ -101,8 +183,6 @@ arrayDeProductos.forEach((el) => {
                         <span class="tarjeta_precio">$${el.precio}</span>
                     </div>
     `
-
-
 
 
     // BOTON AGREGAR AL CARRITO // SWEETALERT
@@ -119,10 +199,6 @@ arrayDeProductos.forEach((el) => {
             timer: 2500
         })
     })
-
-
-
-
 
     tarjeta.appendChild(buttonAgregar);
     app.appendChild(tarjeta);

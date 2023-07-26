@@ -1,6 +1,7 @@
 // CLASE CONSTRUCTORA  
 export class Producto {
-    constructor(nombre, precio, categoria, id, url) {
+    constructor(productoRecibidoPorParametro) {
+        const {nombre, precio, categoria, id, url} = productoRecibidoPorParametro;
         this.nombre = nombre;
         this.precio = precio;
         this.categoria = categoria;
@@ -10,5 +11,5 @@ export class Producto {
 }
 
 export const agregarAlCarrito = (carrito, producto) => {
-    carrito.push (producto)
+    carrito.push(producto)
 }
