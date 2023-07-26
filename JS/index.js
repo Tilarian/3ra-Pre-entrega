@@ -1,4 +1,4 @@
-import { Producto, agregarAlCarrito, inicializarProductos } from "./utility.js";
+import { agregarAlCarrito, inicializarProductos } from "./utility.js";
 
 
 const arrayDeProductos = [];

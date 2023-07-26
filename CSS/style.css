@@ -140,6 +140,8 @@ button {
     box-shadow: 5px 5px 5px #0000004d;
 }
 
+/* FOOTER */
+
 footer {
     background: #f7ece2;
     padding: 1em 0;
@@ -154,12 +156,17 @@ footer {
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas:
-        'area1 area2 area3 area4'
+        'area1 area2 area3'
     ;
 }
 
 .copy p {
-    font-size: 14px;
+    font-size: 18px;
+}
+
+.social {
+    width: 300px;
+
 }
 
 .social a {
@@ -167,7 +174,23 @@ footer {
     font-size: 25px;
 }
 
+.social__list {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+}
+
 .social__list a {
     color: #1f0d0bd8;
+    font-size: 35px;
 
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.contact__list li {
+    text-align: left;
 }
