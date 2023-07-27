@@ -5,7 +5,7 @@ const arrayDeProductos = [];
 let ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 let idUniversal = 1;
 
-inicializarProductos(arrayDeProductos)
+inicializarProductos(arrayDeProductos);
 
 
 let productoEncontrado = {};
