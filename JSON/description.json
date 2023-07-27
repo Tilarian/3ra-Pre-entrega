@@ -1,0 +1,23 @@
+[
+    {
+        "description": "Logitech is a leading brand in computer peripherals and accessories.",
+        "id": 1,
+        "name": "Logitech"
+    },
+    {
+        "description": "HyperX is known for high-quality gaming headsets and memory products.",
+        "id": 2,
+        "name": "HyperX"
+    },
+    {
+
+        "description": "AMD produces powerful and innovative processors for desktop and mobile devices.",
+        "id": 3,
+        "name": "AMD"
+    },
+    {
+        "description": "ASUS graphics cards are renowned for their performance and reliability.",
+        "id": 4,
+        "name": "ASUS"
+    }
+]
