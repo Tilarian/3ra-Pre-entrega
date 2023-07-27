@@ -18,12 +18,16 @@ body {
     width: 100vw;
 }
 
+body a {
+    text-decoration: none;
+}
+
 /* NAVBAR */
 
 .search {
     display: flex;
-align-items: center;
-justify-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
 #search_button {
@@ -87,7 +91,9 @@ header {
 
 #titulo {
     text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
 
 button {
     padding: 12px;
