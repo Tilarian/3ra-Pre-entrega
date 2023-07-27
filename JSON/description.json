@@ -1,17 +1,20 @@
 [
     {
         "id": 1,
-        "name": "pepito",
-        "comentario": "blaba."
+        "name": "Maria Diaz",
+        "comentario": "Gran variedad de productos de hardware a precios competitivos!",
+        "url": "../IMG/user1.jpg"
     },
     {
         "id": 2,
-        "name": "pepito",
-        "comentario": "123123."
+        "name": "Ricardo Martinez",
+        "comentario": "Hardware de alta calidad a precios asequibles. Buen servicio al cliente!",
+        "url": "../IMG/user2.jpg"
     },
     {
         "id": 3,
-        "name": "pepito",
-        "comentario": "blablabla."
+        "name": "Alexandra Alvez",
+        "comentario": "Gran selección de hardware y accesorios. Entrega rápida y gratuita!",
+        "url": "../IMG/user3.jpg"
     }
 ]
