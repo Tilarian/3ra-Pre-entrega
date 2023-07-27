@@ -12,7 +12,7 @@ let productoEncontrado = {};
 
 const app = document.querySelector("#app");
 const carritoButton = document.querySelector("#carrito_button");
-const input = document.querySelector("#search_button");
+const input = document.querySelector("#search_bar");
 
 input.addEventListener("input", (event) => {
     console.log(event.target.value)
