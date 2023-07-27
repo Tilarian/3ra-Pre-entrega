@@ -22,6 +22,15 @@ body a {
     text-decoration: none;
 }
 
+#main_container {
+    display: flex;
+    align-items: center;
+    background-color: #808080;
+    padding: 50px;
+    border-radius: 20px;
+    margin: 20px;
+}
+
 /* NAVBAR */
 
 .search {

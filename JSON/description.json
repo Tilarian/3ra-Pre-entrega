@@ -2,9 +2,16 @@
     {
         "id": 1,
         "name": "pepito",
-        "comentario": "blablablablalbalblablalblablablablalbalblablal",
-        "url": "../IMG/auricular1.jpg"
-
+        "comentario": "blaba."
+    },
+    {
+        "id": 2,
+        "name": "pepito",
+        "comentario": "123123."
+    },
+    {
+        "id": 3,
+        "name": "pepito",
+        "comentario": "blablabla."
     }
 ]
-
