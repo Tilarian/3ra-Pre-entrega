@@ -1,18 +1,14 @@
 import { agregarAlCarrito, inicializarProductos } from "./utility.js";
 
-
-const arrayDeProductos = [];
-let ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
-let idUniversal = 1;
-
-inicializarProductos(arrayDeProductos);
-
-
-let productoEncontrado = {};
-
 const app = document.querySelector("#app");
 const carritoButton = document.querySelector("#carrito_button");
 const input = document.querySelector("#search_bar");
+const arrayDeProductos = [];
+let ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+let productoEncontrado = {};
+
+inicializarProductos(arrayDeProductos);
+
 
 input.addEventListener("input", (event) => {
     console.log(event.target.value)
@@ -23,6 +19,40 @@ input.addEventListener("input", (event) => {
 input.addEventListener("keypress", (event) => {
     (event.key === "Enter" && productoEncontrado) && console.log("El producto es:", productoEncontrado)
 })
+
+
+// RECORRO EL ARRAY Y PRINTEO EN "APP"
+arrayDeProductos.forEach((el) => {
+    const tarjeta = document.createElement("div");
+    tarjeta.classList.add("tarjeta");
+    tarjeta.innerHTML = ` 
+                    <div class="tarjeta_image"><img src="${el.url}" alt=""/></div>
+                    <div class="tarjeta_informacion">
+                        <span class="tarjeta_nombre">${el.nombre}</span>
+                        <span class="tarjeta_precio">$${el.precio}</span>
+                    </div>
+    `
+
+
+    // BOTON AGREGAR AL CARRITO // SWEETALERT
+    const buttonAgregar = document.createElement("button");
+    buttonAgregar.innerText = "Agregar";
+    buttonAgregar.addEventListener("click", () => {
+        agregarAlCarrito(ArrayCarrito, el);
+        localStorage.setItem("carrito", JSON.stringify(ArrayCarrito));
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'El producto se agregó correctamente',
+            showConfirmButton: false,
+            timer: 2500
+        })
+    })
+
+    tarjeta.appendChild(buttonAgregar);
+    app.appendChild(tarjeta);
+})
+
 
 // BOTON CARRITO // CONTADOR Y PRECIO FINAL
 carritoButton.addEventListener("click", () => {
@@ -65,40 +95,6 @@ carritoButton.addEventListener("click", () => {
             })
         } // Callback after click
     }).showToast();
-})
-
-
-
-// RECORRO EL ARRAY Y PRINTEO EN "APP"
-arrayDeProductos.forEach((el) => {
-    const tarjeta = document.createElement("div");
-    tarjeta.classList.add("tarjeta");
-    tarjeta.innerHTML = ` 
-                    <div class="tarjeta_image"><img src="${el.url}" alt=""/></div>
-                    <div class="tarjeta_informacion">
-                        <span class="tarjeta_nombre">${el.nombre}</span>
-                        <span class="tarjeta_precio">$${el.precio}</span>
-                    </div>
-    `
-
-
-    // BOTON AGREGAR AL CARRITO // SWEETALERT
-    const buttonAgregar = document.createElement("button");
-    buttonAgregar.innerText = "Agregar";
-    buttonAgregar.addEventListener("click", () => {
-        agregarAlCarrito(ArrayCarrito, el);
-        localStorage.setItem("carrito", JSON.stringify(ArrayCarrito));
-        Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'El producto se agregó correctamente',
-            showConfirmButton: false,
-            timer: 2500
-        })
-    })
-
-    tarjeta.appendChild(buttonAgregar);
-    app.appendChild(tarjeta);
 })
 
 const finalizarCompra = () => {
