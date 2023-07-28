@@ -66,7 +66,9 @@ carritoButton.addEventListener("click", () => {
                             <span class="tarjeta_nombre">${el.nombre}</span>
                             <span class="tarjeta_precio">$${el.precio}</span>
                         </div> 
-                        <div id="quitar_button"><img src="IMG/trashcan.png" alt=""><a href="#"></a> </div>
+                        <div>
+                        <a href="#" id="quitar_button"><img src="IMG/trashcan.png" alt="" id="${el.id}"></a>
+                        </div>
         `
 
         app.appendChild(tarjeta);
