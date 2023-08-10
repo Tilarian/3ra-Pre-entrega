@@ -77,31 +77,29 @@ carritoButton.addEventListener("click", () => {
 
     let total = ArrayCarrito.reduce((contadorProductos, el) => contadorProductos + el.precio, 0)
 
-    Toastify({
-        text: `Tienes ${ArrayCarrito.length} productos en tu carrito con un total de $${total}.`,
-        duration: 3000,
-        close: false,
-        gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-            background: "linear-gradient(to right, #00b09b, #96c93d)",
-        },
-        onClick: () => {
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Gracias por tu compra!',
-                showConfirmButton: false,
-                timer: 3000
-            })
-        } // Callback after click
-    }).showToast();
+    //MomentJS 
+    const toDay = moment().format('llll');
+    const toDaySplit = toDay.split(',')
+    const toDayParse = `${toDaySplit[0]}/${toDaySplit[1]}/${toDaySplit[2]}`
+
+        Toastify({
+            text: `Tienes ${ArrayCarrito.length} productos en tu carrito con un total de $${total}. \n Click para finalizar compra`,
+            duration: 3000,
+            close: false,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+                background: "linear-gradient(to right, #00b09b, #96c93d)",
+            },
+            onClick: () => {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Gracias por tu compra! \n Nº de factura ######## \n Fecha:' + toDayParse,
+                    showConfirmButton: false,
+                    timer: 3000
+                })
+            } // Callback after click
+        }).showToast();
 })
-
-const finalizarCompra = () => {
-
-    ArrayCarrito = []
-    localStorage.remove("carrito")
-
-}
