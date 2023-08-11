@@ -6,6 +6,7 @@ const input = document.querySelector("#search_bar");
 const arrayDeProductos = [];
 let ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 let productoEncontrado = {};
+const contador = document.querySelector("#contador");
 
 inicializarProductos(arrayDeProductos);
 
