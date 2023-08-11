@@ -4,11 +4,12 @@ const app = document.querySelector("#app");
 const carritoButton = document.querySelector("#carrito_button");
 const input = document.querySelector("#search_bar");
 const arrayDeProductos = [];
+const contador = document.querySelector("#contador");
 let ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 let productoEncontrado = {};
-const contador = document.querySelector("#contador");
+let idUniversal = 1;
 
-inicializarProductos(arrayDeProductos);
+inicializarProductos(arrayDeProductos,idUniversal);
 
 
 input.addEventListener("input", (event) => {
