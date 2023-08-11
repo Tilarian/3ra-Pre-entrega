@@ -12,17 +12,6 @@ let idUniversal = 1;
 inicializarProductos(arrayDeProductos,idUniversal);
 
 
-input.addEventListener("input", (event) => {
-    console.log(event.target.value)
-    productoEncontrado = arrayDeProductos.find(el => el.nombre === event.target.value)
-
-})
-
-input.addEventListener("keypress", (event) => {
-    (event.key === "Enter" && productoEncontrado) && console.log("El producto es:", productoEncontrado)
-})
-
-
 // RECORRO EL ARRAY Y PRINTEO EN "APP"
 arrayDeProductos.forEach((el) => {
     const tarjeta = document.createElement("div");

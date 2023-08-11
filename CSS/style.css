@@ -68,15 +68,9 @@ body a {
 
 /* NAVBAR */
 
-.search {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#search_bar {
-    border-radius: 8px;
-    width: 500px;
+h1 {
+    background-color: #ff000033;
+    margin-bottom: 0px;
 }
 
 .logo {
@@ -89,13 +83,13 @@ body a {
     max-width: 100px;
     border-radius: 50%;
     box-shadow: 5px 5px #000000a8;
-
 }
 
 .menu {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding-left: 0px;
 }
 
 li {
@@ -110,9 +104,7 @@ li a {
 }
 
 header {
-    width: 100%;
-    padding: 10px 12px;
-    background-color: #f7ece2;
+    background-color: #808080;
 }
 
 #carrito_button img {
@@ -126,7 +118,7 @@ header {
 }
 
 span {
-    color: black;
+    color: rgb(255, 255, 255);
     padding-left: 10px;
 }
 
@@ -137,22 +129,21 @@ span {
 
 
 button {
-    padding: 12px;
-    background: #808080;
+    padding: 8px 60px;
+    background: #269e16d8;
     border: none;
     color: #ffffff;
-    border-radius: 10px;
+    border-radius: 30px;
     align-self: center;
     cursor: pointer;
     font-weight: 700;
-    margin-top: 12px;
+    margin-bottom: 15px;
 }
 
 #about_button {
     background-color: rgb(0, 0, 0);
-    padding: 10px;
-    border-radius: 10px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 10px 30px;
+    border-radius: 50px;
     font-size: 19px;
 
 
@@ -170,9 +161,9 @@ button {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
-    gap: 24px;
+    gap: 50px 0px;
     justify-items: center;
-    padding: 20px;
+    padding: 30px 145px 30px 145px;
 
 }
 
@@ -197,13 +188,18 @@ button {
     padding: 12px;
 }
 
+.tarjeta_informacion span  {
+    color: #000000;
+}
+
 .tarjeta {
-    height: 100%;
-    width: 70%;
+    height: 900px;
+    width: 80%;
     background-color: #ffffff;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     overflow: hidden;
     box-shadow: 5px 5px 5px #0000004d;
 }
@@ -212,13 +208,13 @@ button {
 
 footer {
     background: #f7ece2;
-    padding: 1em 0;
+    padding: 1em 0 0 0;
     text-align: center;
-    margin-top: auto;
-
 }
 
 .contenedor {
+    padding: 15px 0px 15px 0px;
+    background-color: #ff000033;
     justify-content: space-around;
     display: grid;
     grid-template-columns: auto;
@@ -229,6 +225,7 @@ footer {
 }
 
 .copy p {
+    margin-top: 10px;
     font-size: 18px;
 }
 
@@ -245,7 +242,8 @@ footer {
 .social__list {
     display: flex;
     justify-content: space-around;
-    padding-top: 50px;
+    padding-top: 40px;
+    padding-left: 0px;
 }
 
 .social__list a {
@@ -265,7 +263,10 @@ iframe {
 }
 
 .contact__list {
-    padding-top: 50px;
+    padding-top: 40px;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-left: 0px;
 
 }
 
