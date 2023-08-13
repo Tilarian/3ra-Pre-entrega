@@ -188,7 +188,7 @@ button {
     padding: 12px;
 }
 
-.tarjeta_informacion span  {
+.tarjeta_informacion span {
     color: #000000;
 }
 
@@ -273,18 +273,21 @@ iframe {
 #quitar_button {
     display: flex;
     justify-content: center;
-    height: 100%;
+}
+
+
+#quitar_button img {
+    width: 80px;
+    height: 80px;
+}
+
+.vaciarCarrito {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-#quitar_button a {
-    text-decoration: none;
-    font-size: 30px;
-    background-color: #ff0000;
-    text-align: center;
-}
-
-#quitar_button img {
+#vaciar_carrito_button img {
     width: 80px;
     height: 80px;
 }

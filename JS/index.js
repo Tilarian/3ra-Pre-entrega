@@ -2,11 +2,9 @@ import { agregarAlCarrito, inicializarProductos } from "./utility.js";
 
 const app = document.querySelector("#app");
 const carritoButton = document.querySelector("#carrito_button");
-const input = document.querySelector("#search_bar");
 const arrayDeProductos = [];
 const contador = document.querySelector("#contador");
 let ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
-let productoEncontrado = {};
 let idUniversal = 1;
 
 inicializarProductos(arrayDeProductos,idUniversal);
