@@ -134,7 +134,7 @@ carritoButton.addEventListener("click", () => {
                 icon: 'success',
                 title: 'Gracias por tu compra! \n Nº de factura ######## \n Fecha:' + toDayParse,
                 showConfirmButton: false,
-                timer: 3000
+                timer: 2500
             }).then(() => {
                 ArrayCarrito = [];
                 contador.innerHTML = ArrayCarrito.length;
