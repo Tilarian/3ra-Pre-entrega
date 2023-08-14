@@ -100,4 +100,9 @@ export const agregarAlCarrito = (carrito, producto) => {
     carrito.push(producto)
 }
 
-export default agregarAlCarrito;
+export const eliminarDelCarrito = (carrito, index) => {
+    let storageIndex = carrito.findIndex((e) => e.id === index);
+    carrito.splice(storageIndex, 1);
+}
+
+export default {agregarAlCarrito, eliminarDelCarrito};
